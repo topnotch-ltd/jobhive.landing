@@ -12,6 +12,7 @@ import {Community} from "@/components/marketing/community";
 import {Support} from "@/components/marketing/support";
 import landingContent from "@/content/landing";
 import {getAllSponsors} from "@/utils/get-all-sponsors";
+import {Pricing} from "@/components/marketing/pricing";
 
 async function getData() {
   try {
@@ -34,6 +35,7 @@ export default async function Home() {
         <Hero />
         <FeaturesGrid features={landingContent.topFeatures} />
         <CustomThemes />
+        <Pricing />
         <A11yOtb />
         <DarkMode />
         <Customization />
