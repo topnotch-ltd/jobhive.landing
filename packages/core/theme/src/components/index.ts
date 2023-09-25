@@ -1,7 +1,6 @@
 export * from "./avatar";
 export * from "./card";
 export * from "./link";
-export * from "./user";
 export * from "./button";
 export * from "./drip";
 export * from "./spinner";

@@ -5,7 +5,7 @@ import {
   MoonIcon,
   MagicIcon,
   FlashIcon,
-  DevicesIcon,
+  PaletteIcon,
   ServerLinearIcon,
   TagUserLinearIcon,
   MouseCircleLinearIcon,
@@ -17,33 +17,35 @@ import {
 export default {
   topFeatures: [
     {
-      title: "Themeable",
+      title: "Instant Resume Magic",
+      start: "NEW",
+      emphasis: "NEW",
+      end: "NEW",
       description:
-        "Provides a plugin to customize default themes, you can change all semantic tokens or create an entire new theme.",
+        "Our smart resume builder crafts stunning resumes in seconds, showcasing your skills effortlessly.",
       icon: <MagicIcon className="text-pink-500" />,
     },
     {
-      title: "Fast",
+      title: "Tailored for YOU",
       description:
-        "Built on top of Tailwind CSS, which means no runtime styles, and no unnecessary classes in your bundle.",
-      icon: <FlashIcon className="text-pink-500" />,
+        "Say goodbye to generic resumes! We customize your content in minutes for your dream job.",
+      icon: <TagUserLinearIcon className="text-pink-500" />,
     },
     {
-      title: "Light & Dark UI",
+      title: "Diverse Templates",
+      description: "Choose from a variety of professional templates for a lasting impression.",
+      icon: <PaletteIcon className="text-pink-500" />,
+    },
+    {
+      title: "Complete Career Toolkit",
       description:
-        "Automatic dark mode recognition, NextUI automatically changes the theme when detects HTML theme prop changes.",
+        "We also create cover letters, prep questions, and soon, job tracking. Stay ahead with CV Lab!",
       icon: <MoonIcon className="text-pink-500" />,
-    },
-    {
-      title: "Unique DX",
-      description:
-        "NextUI is fully-typed to minimize the learning curve, and provide the best possible developer experience.",
-      icon: <DevicesIcon className="text-pink-500" />,
     },
   ],
   fullFeatures: [
     {
-      title: "React server components",
+      title: "Complete Career Toolkit",
       description: (
         <>
           All NextUI components already include the <Code>&quot;use client&quot;</Code> directive,

@@ -1,5 +1,5 @@
 "use client";
-
+import {FaInstagram, FaLinkedin, FaTwitter, FaUser} from "react-icons/fa";
 import {useRef, useState, FC, ReactNode, Key} from "react";
 import {
   link,
@@ -12,35 +12,21 @@ import {
   Link,
   Button,
   Kbd,
-  Dropdown,
-  DropdownMenu,
-  DropdownItem,
-  DropdownTrigger,
-  Chip,
 } from "@nextui-org/react";
 import {dataFocusVisibleClasses} from "@nextui-org/theme";
-import {ChevronDownIcon, LinkIcon} from "@nextui-org/shared-icons";
 import {isAppleDevice} from "@react-aria/utils";
 import {clsx} from "@nextui-org/shared-utils";
 import NextLink from "next/link";
 import {usePathname} from "next/navigation";
 import {includes} from "lodash";
-import {motion, AnimatePresence} from "framer-motion";
 import {useEffect} from "react";
 import {usePress} from "@react-aria/interactions";
 import {useFocusRing} from "@react-aria/focus";
 
-import {currentVersion} from "@/utils/version";
 import {siteConfig} from "@/config/site";
 import {Route} from "@/libs/docs/page";
 import {LargeLogo, SmallLogo, ThemeSwitch} from "@/components";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchLinearIcon,
-} from "@/components/icons";
+import {GithubIcon, SearchLinearIcon} from "@/components/icons";
 import {useIsMounted} from "@/hooks/use-is-mounted";
 import {DocsSidebar} from "@/components/docs/sidebar";
 import {useCmdkStore} from "@/components/cmdk";
@@ -162,7 +148,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             <SmallLogo className="w-6 h-6 md:hidden" />
             <LargeLogo className="h-5 md:h-6" />
           </NextLink>
-          {ref.current ? (
+          {/* {ref.current ? (
             <Dropdown placement="bottom-start" portalContainer={ref.current}>
               <AnimatePresence>
                 {isMounted && (
@@ -195,11 +181,11 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             </Dropdown>
           ) : (
             <div className="w-[74px]" />
-          )}
+          )} */}
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start items-center">
           <NavbarItem>
-            <NextLink
+            {/* <NextLink
               className={navLinkClasses}
               color="foreground"
               data-active={includes(docsPaths, pathname)}
@@ -207,7 +193,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
               onClick={() => handlePressNavbarItem("Docs", "/docs/guide/introduction")}
             >
               Docs
-            </NextLink>
+            </NextLink> */}
           </NavbarItem>
           <NavbarItem>
             <NextLink
@@ -217,7 +203,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
               href="/docs/components/avatar"
               onClick={() => handlePressNavbarItem("Components", "/docs/components/avatar")}
             >
-              Components
+              Home
             </NextLink>
           </NavbarItem>
           <NavbarItem>
@@ -228,7 +214,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
               href="/blog"
               onClick={() => handlePressNavbarItem("Blog", "/blog")}
             >
-              Blog
+              Features
             </NextLink>
           </NavbarItem>
           <NavbarItem>
@@ -239,11 +225,44 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
               href="/figma"
               onClick={() => handlePressNavbarItem("Figma", "/figma")}
             >
-              Figma
+              Pricing
             </NextLink>
           </NavbarItem>
           <NavbarItem>
-            <Chip
+            <NextLink
+              className={navLinkClasses}
+              color="foreground"
+              data-active={includes(pathname, "figma")}
+              href="/figma"
+              onClick={() => handlePressNavbarItem("Figma", "/figma")}
+            >
+              Reviews
+            </NextLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NextLink
+              className={navLinkClasses}
+              color="foreground"
+              data-active={includes(pathname, "figma")}
+              href="/figma"
+              onClick={() => handlePressNavbarItem("Figma", "/figma")}
+            >
+              FAQ
+            </NextLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NextLink
+              className={navLinkClasses}
+              color="foreground"
+              data-active={includes(pathname, "figma")}
+              href="/figma"
+              onClick={() => handlePressNavbarItem("Figma", "/figma")}
+            >
+              Blog
+            </NextLink>
+          </NavbarItem>
+          {/* <NavbarItem> */}
+          {/* <Chip
               as={NextLink}
               className="hover:bg-default-100 border-default-200/80 dark:border-default-100/80 transition-colors cursor-pointer"
               color="secondary"
@@ -255,8 +274,8 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
               <span aria-label="party emoji" role="img">
                 🎉
               </span>
-            </Chip>
-          </NavbarItem>
+            </Chip> */}
+          {/* </NavbarItem> */}
         </ul>
       </NavbarContent>
 
@@ -306,7 +325,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             href={siteConfig.links.twitter}
             onPress={() => handlePressNavbarItem("Twitter", siteConfig.links.twitter)}
           >
-            <TwitterIcon className="text-default-600 dark:text-default-500" />
+            <FaTwitter className="text-default-600 dark:text-default-500" size={22} />
           </Link>
           <Link
             isExternal
@@ -315,7 +334,7 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             href={siteConfig.links.discord}
             onPress={() => handlePressNavbarItem("Discord", siteConfig.links.discord)}
           >
-            <DiscordIcon className="text-default-600 dark:text-default-500" />
+            <FaInstagram className="text-default-600 dark:text-default-500" size={22} />
           </Link>
           <Link
             isExternal
@@ -324,11 +343,11 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             href={siteConfig.links.github}
             onPress={() => handlePressNavbarItem("Github", siteConfig.links.github)}
           >
-            <GithubIcon className="text-default-600 dark:text-default-500" />
+            <FaLinkedin className="text-default-600 dark:text-default-500" size={22} />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchButton}</NavbarItem>
+        {/* <NavbarItem className="hidden lg:flex">{searchButton}</NavbarItem> */}
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal
@@ -336,12 +355,27 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             className="group text-sm font-normal text-default-600 bg-default-400/20 dark:bg-default-500/20"
             href={siteConfig.links.sponsor}
             startContent={
-              <HeartFilledIcon className="text-danger group-data-[hover=true]:animate-heartbeat" />
+              <FaUser className="text-danger group-data-[hover=true]:animate-heartbeat" />
             }
             variant="flat"
             onPress={() => handlePressNavbarItem("Sponsor", siteConfig.links.sponsor)}
           >
-            Sponsor
+            Log In
+          </Button>
+        </NavbarItem>
+        <NavbarItem className="hidden md:flex">
+          <Button
+            isExternal
+            as={Link}
+            className="group text-sm font-normal text-default-600 bg-default-400/20 dark:bg-default-500/20"
+            href={siteConfig.links.sponsor}
+            startContent={
+              <FaUser className="text-danger group-data-[hover=true]:animate-heartbeat" />
+            }
+            variant="flat"
+            onPress={() => handlePressNavbarItem("Sponsor", siteConfig.links.sponsor)}
+          >
+            Sign Up
           </Button>
         </NavbarItem>
         <NavbarMenuToggle
