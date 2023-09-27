@@ -5,8 +5,7 @@ import dynamic from "next/dynamic";
 
 import {FloatingComponents} from "./floating-components";
 
-import getRandomNumber from "@/utils/getRandomNumber";
-import {texts, paragraphs, numbers} from "@/utils/constants";
+import {texts, numbers} from "@/utils/constants";
 import {title, subtitle} from "@/components/primitives";
 import {GenerateButton} from "@/components/demos/generate-button";
 
@@ -16,20 +15,26 @@ const BgLooper = dynamic(() => import("./bg-looper").then((mod) => mod.BgLooper)
 
 export const Hero = () => {
   const [randomIndex, setRandomIndex] = useState(0);
-  const [textIndex, setTextIndex] = useState(0);
   const [textFastIndex, setTextFastIndex] = useState(0);
-  const [paragraphIndex, setParagraphIndex] = useState(0);
 
   useEffect(() => {
     let interval = setInterval(() => {
-      setRandomIndex(getRandomNumber(0, numbers.length));
-      setTextIndex(getRandomNumber(0, texts.length));
-      setParagraphIndex(getRandomNumber(0, paragraphs.length));
-      setTextFastIndex(getRandomNumber(0, paragraphs.length));
-    }, 4000);
+      if (randomIndex >= numbers.length - 1) {
+        setRandomIndex(0);
+      } else {
+        setRandomIndex(randomIndex + 1);
+      }
+      if (textFastIndex >= texts.length - 1) {
+        setTextFastIndex(0);
+      } else {
+        setTextFastIndex(textFastIndex + 1);
+      }
+    }, 1500);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [randomIndex, textFastIndex]);
 
   return (
     <section className="flex relative overflow-hidden lg:overflow-visible w-full flex-nowrap justify-between items-center h-[calc(100vh_-_64px)] 2xl:h-[calc(84vh_-_64px)]">

@@ -107,7 +107,7 @@ export const FloatingComponents: React.FC<{}> = () => {
           <Tooltip
             className="text-sm animate-[levitate_14s_ease_infinite]"
             color="secondary"
-            content="Developers love Next.js"
+            content="Tell us about your leadership skills"
             isOpen={!isTablet}
             placement="top"
             style={{
@@ -120,7 +120,7 @@ export const FloatingComponents: React.FC<{}> = () => {
               size="sm"
               variant="flat"
             >
-              Tooltip
+              Question 3
             </Button>
           </Tooltip>
         )}
@@ -143,7 +143,7 @@ export const FloatingComponents: React.FC<{}> = () => {
             as={NextImage}
             className="object-cover"
             height={200}
-            src="/images/hero-card.webp"
+            src="/images/hero-card2.jpg"
             width={200}
           />
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">

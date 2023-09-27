@@ -22,6 +22,7 @@ import {includes} from "lodash";
 import {useEffect} from "react";
 import {usePress} from "@react-aria/interactions";
 import {useFocusRing} from "@react-aria/focus";
+import {useTheme} from "next-themes";
 
 import {siteConfig} from "@/config/site";
 import {Route} from "@/libs/docs/page";
@@ -43,6 +44,7 @@ export interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], slug, tag}) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean | undefined>(false);
   const [commandKey, setCommandKey] = useState<"ctrl" | "command">("command");
+  const {theme, setTheme} = useTheme();
 
   const ref = useRef<HTMLElement>(null);
   const isMounted = useIsMounted();
@@ -355,7 +357,10 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
             className="group text-sm font-normal text-default-600 bg-default-400/20 dark:bg-default-500/20"
             href={siteConfig.links.sponsor}
             startContent={
-              <FaUser className="text-danger group-data-[hover=true]:animate-heartbeat" />
+              <FaUser
+                className="text-danger group-data-[hover=true]:animate-heartbeat"
+                color={theme === undefined ? "white" : theme === "dark" ? "white" : "black"}
+              />
             }
             variant="flat"
             onPress={() => handlePressNavbarItem("Sponsor", siteConfig.links.sponsor)}
@@ -367,12 +372,16 @@ export const Navbar: FC<NavbarProps> = ({children, routes, mobileRoutes = [], sl
           <Button
             isExternal
             as={Link}
-            className="group text-sm font-normal text-default-600 bg-default-400/20 dark:bg-default-500/20"
+            // className="group text-sm font-normal text-default-600 bg-default-400/20 dark:bg-default-500/20"
+            color="primary"
             href={siteConfig.links.sponsor}
             startContent={
-              <FaUser className="text-danger group-data-[hover=true]:animate-heartbeat" />
+              <FaUser
+                className="text-danger group-data-[hover=true]:animate-heartbeat"
+                color="white"
+              />
             }
-            variant="flat"
+            // variant="ghost"
             onPress={() => handlePressNavbarItem("Sponsor", siteConfig.links.sponsor)}
           >
             Sign Up
