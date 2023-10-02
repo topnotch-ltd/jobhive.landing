@@ -1,5 +1,6 @@
 import React from "react";
 import {Code} from "@nextui-org/react";
+import {SiRetool} from "react-icons/si";
 
 import {
   MoonIcon,
@@ -40,7 +41,7 @@ export default {
       title: "Complete Career Toolkit",
       description:
         "We also create cover letters, prep questions, and soon, job tracking. Stay ahead with CV Lab!",
-      icon: <MoonIcon className="text-pink-500" />,
+      icon: <SiRetool className="text-pink-500" />,
     },
   ],
   fullFeatures: [
@@ -52,7 +53,7 @@ export default {
           which means you can import and use them directly in your RSC.
         </>
       ),
-      icon: <ServerLinearIcon className="text-pink-500" />,
+      icon: <SiRetool className="text-pink-500" />,
     },
     {
       title: "Accessible components",
