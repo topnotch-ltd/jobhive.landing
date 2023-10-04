@@ -225,32 +225,31 @@ export const CustomThemes = () => {
       <div className="flex flex-col gap-8">
         <div>
           <div className={titleWrapper()}>
-            <h1 className={title({size: "lg"})}>Apply your own</h1>
+            <h1 className={title({size: "lg"})}>Select from a variaty of</h1>
             <div>
-              <h1 className={title({color: "blue", size: "lg"})}>theming&nbsp;</h1>
-              <h1 className={title({size: "lg"})}>decisions.</h1>
+              <h1 className={title({color: "blue", size: "lg"})}>Templates.&nbsp;</h1>
             </div>
           </div>
           <p className={subtitle()}>
-            NextUI provides a custom TailwindCSS plugin that allows you to customize the default
-            themes or create your own.
+            CV Studio provides a large set of custom templates designed to represent your skills in the best way possible!
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           <CustomThemesExample
             selectedTheme={selectedTheme}
             tabs={tabs}
             onChangeTheme={setSelectedTheme}
           />
-          <CodeWindow
-            showWindowIcons
-            className="max-h-[440px] min-h-[390px]"
-            highlightLines={get(codeHighlights, selectedTheme)}
-            isScrollable={false}
-            language="jsx"
-            title="tailwind.config.js"
-            value={landingContent.themingCode}
+             <Image
+            alt="Resume"
+            as={Image}
+            className="object-cover top-[-50px] right-[-120px] "
+            height={1000}
+            src="/images/templates-showcase.png"
+            width={1000}
           />
+       
+
         </div>
       </div>
       <div className="h-full dark:md:block absolute hidden -bottom-[10%] -left-[15%] -z-[1]">

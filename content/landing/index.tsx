@@ -40,8 +40,8 @@ export default {
     {
       title: "Complete Career Toolkit",
       description:
-        "We also create cover letters, prep questions, and soon, job tracking. Stay ahead with CV Lab!",
-      icon: <SiRetool className="text-pink-500" />,
+        "Our editor creates cover letters, prep questions, and soon, job tracking. Stay ahead with CV Studio!",
+      icon: <MouseCircleLinearIcon className="text-pink-500" />,
     },
   ],
   fullFeatures: [
@@ -83,18 +83,6 @@ export default {
       title: "Override components tags",
       description: "A polymorphic `as` prop is included in all NextUI components.",
       icon: <HtmlLogoLinearIcon className="text-pink-500" />,
-    },
-    {
-      title: "No runtime styles",
-      description:
-        "NextUI is based on Tailwind CSS, it means that there are no runtime styles, and no unnecessary classes in your bundle.",
-      icon: <FlashIcon className="text-pink-500" />,
-    },
-    {
-      title: "Beautifully designed",
-      description:
-        "NextUI components are unique and are not tied to any visual trend or design rule, which makes us unique and of course your projects as well.",
-      icon: <MagicIcon className="text-pink-500" />,
     },
   ],
   themingCode: `const { nextui } = require("@nextui-org/react");

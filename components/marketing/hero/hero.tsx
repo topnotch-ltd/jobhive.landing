@@ -2,6 +2,11 @@
 import React, {useState, useEffect} from "react";
 import ReactTextTransition from "react-text-transition";
 import dynamic from "next/dynamic";
+import NextImage from "next/image";
+
+import {
+  Image,
+} from "@nextui-org/react";
 
 import {FloatingComponents} from "./floating-components";
 
@@ -58,8 +63,15 @@ export const Hero = () => {
         </div>
       </div>
 
-      <FloatingComponents />
-
+      {/* <FloatingComponents /> */}
+      <Image
+            alt="Resume"
+            as={Image}
+            className="object-cover top-[50px] left-[-120px]"
+            height={450}
+            src="/images/hero_image1.png"
+            width={450}
+          />
       <BgLooper />
     </section>
   );

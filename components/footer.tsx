@@ -20,8 +20,12 @@ export const Footer = () => {
       <div className="flex flex-col justify-center items-center gap-1">
         <p className="text-sm text-default-400">
           Created&nbsp;by&nbsp;
-          <Link isExternal className="text-sm" href={siteConfig.links.portfolio}>
-            Junior Garcia
+          <Link isExternal className="text-sm" href={siteConfig.creators_socials.harithsami}>
+            Hairth Sami
+          </Link>
+          &nbsp;and&nbsp;
+          <Link isExternal className="text-sm" href={siteConfig.creators_socials.harithalsafi}>
+            Hairth Al-Safi
           </Link>
         </p>
         <VercelCallout />

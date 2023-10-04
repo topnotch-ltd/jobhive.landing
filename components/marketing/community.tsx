@@ -24,11 +24,12 @@ export const Community = () => {
           <Spacer y={12} />
           <FeaturesGrid
             classNames={{
-              base: "lg:grid-cols-3",
+              base: "lg:grid-cols-4",
               iconWrapper: "bg-transparent",
               body: "pt-0",
             }}
             features={communityAccounts}
+            
           />
         </div>
       </div>

@@ -20,8 +20,8 @@ export const VercelCallout: React.FC<unknown> = () => {
         });
       }}
     >
-      <p className="font-normal">Deployed on</p>
-      <VercelIcon className="text-black dark:text-white" height={18} />
+      <p className="font-normal">@2023 TopNotch LTD</p>
+      {/* <VercelIcon className="text-black dark:text-white" height={18} /> */}
     </Link>
   );
 };

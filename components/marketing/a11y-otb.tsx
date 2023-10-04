@@ -94,23 +94,14 @@ export const A11yOtb = () => {
       <div className="flex flex-col gap-8">
         <div>
           <div className={titleWrapper()}>
-            <h1 className={title({size: "lg"})}>Accessibility</h1>
+            <h1 className={title({size: "lg"})}>Become a</h1>
             <div>
-              <h1 className={title({color: "green", size: "lg"})}>out of the&nbsp;</h1>
-              <h1 className={title({size: "lg"})}>box.</h1>
+              <h1 className={title({color: "green", size: "lg"})}>top&nbsp;</h1>
+              <h1 className={title({size: "lg"})}>applicant.</h1>
             </div>
           </div>
           <p className={subtitle()}>
-            NextUI components are built on top of&nbsp;
-            <NextUILink
-              isExternal
-              className="text-xl text-default-500 font-light [&>svg]:ml-1"
-              href="https://react-spectrum.adobe.com/react-aria/"
-              underline="always"
-            >
-              React Aria
-            </NextUILink>
-            &nbsp;ensuring exceptional accessibility support as a top priority.
+            We are working hard to bring you the best experience.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -137,90 +128,17 @@ export const A11yOtb = () => {
               Learn more
             </Button>
           </div>
-          <GradientBox
-            ref={ref}
-            className="h-full min-h-[200px] lg:min-h-[390px] max-h-[300px] lg:pt-8 items-center lg:items-start justify-center"
-            color="green"
-            to="right"
-          >
-            <Tooltip className="text-xs px-2" content="Show code" placement="top">
-              <Button
-                isIconOnly
-                aria-label="Show code"
-                className="absolute top-1 right-1 text-success-50 data-[hover]:bg-foreground/10"
-                radius="full"
-                variant="light"
-                onPress={() => setIsModalOpen(true)}
-              >
-                <InfoBoldIcon className="rotate-180" />
-              </Button>
-            </Tooltip>
-            {ref.current && (
-              <Dropdown
-                className="shadow-xl"
-                closeOnSelect={true}
-                isOpen={isDropdownOpen}
-                placement="bottom"
-                portalContainer={ref.current}
-                shouldBlockScroll={false}
-                shouldFlip={isMobile}
-                onOpenChange={(open) => setIsDropdownOpen(open)}
-              >
-                <DropdownTrigger>
-                  <Button className="bg-success-50" color="success" variant="flat">
-                    {isMobile ? "Click me" : "Actions"}
-                  </Button>
-                </DropdownTrigger>
-                <DropdownMenu
-                  aria-label="Actions"
-                  closeOnSelect={true}
-                  color="default"
-                  variant="flat"
-                >
-                  <DropdownSection showDivider title="Actions">
-                    <DropdownItem
-                      key="new"
-                      description="Create a new file"
-                      shortcut="⌘N"
-                      startContent={<AddNoteBulkIcon className={iconClasses} />}
-                    >
-                      New file
-                    </DropdownItem>
-                    <DropdownItem
-                      key="copy"
-                      description="Copy the file link"
-                      shortcut="⌘C"
-                      startContent={<CopyDocumentBulkIcon className={iconClasses} />}
-                    >
-                      Copy link
-                    </DropdownItem>
-                    <DropdownItem
-                      key="edit"
-                      description="Allows you to edit the file"
-                      shortcut="⌘⇧E"
-                      startContent={<EditDocumentBulkIcon className={iconClasses} />}
-                    >
-                      Edit file
-                    </DropdownItem>
-                  </DropdownSection>
-                  <DropdownSection title="Danger zone">
-                    <DropdownItem
-                      key="delete"
-                      className="text-danger"
-                      color="danger"
-                      description="Permanently delete the file"
-                      shortcut="⌘⇧D"
-                      startContent={
-                        <DeleteDocumentBulkIcon className={clsx(iconClasses, "!text-danger")} />
-                      }
-                    >
-                      Delete file
-                    </DropdownItem>
-                  </DropdownSection>
-                </DropdownMenu>
-              </Dropdown>
-            )}
-          </GradientBox>
+
+          <Image
+            alt="Resume"
+            as={Image}
+            className="object-cover right-[-120px] top-[-50px]"
+            height={750}
+            src="/images/hero-top-applicant.png"
+            width={750}
+          />
+
+
         </div>
       </div>
       <div className="absolute hidden dark:md:block h-full dark:opacity-70 -bottom-[10%] left-[20%] z-[-10]">

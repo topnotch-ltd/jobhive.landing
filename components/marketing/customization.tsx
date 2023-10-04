@@ -1,14 +1,20 @@
 "use client";
 
 /* eslint-disable react/display-name */
-import {Button, Link} from "@nextui-org/react";
+import {Button, Link, Tooltip} from "@nextui-org/react";
 import NextLink from "next/link";
+import {Image} from "@nextui-org/react";
 
 import {title, subtitle, titleWrapper, sectionWrapper} from "@/components/primitives";
 import {CodeWindow} from "@/components/code-window";
 import landingContent from "@/content/landing";
 import {GradientBox} from "@/components/gradient-box";
 import {CustomButton} from "@/components/demos";
+
+import {MusicPlayer} from "@/components/demos";
+import {ThemeSwitch} from "@/components/theme-switch";
+
+import {InfoBoldIcon} from "@/components/icons";
 
 export const Customization = () => {
   return (
@@ -22,35 +28,44 @@ export const Customization = () => {
             </div>
           </div>
           <p className={subtitle()}>
-            NextUI is based on{" "}
-            <Link
-              isExternal
-              className="text-xl text-default-500 font-light [&>svg]:ml-1"
-              href="https://tailwind-variants.org"
-              underline="always"
-            >
-              Tailwind Variants
-            </Link>
-            , it simplifies component slots customization while avoiding Tailwind class conflicts.
+            Feel free to modify the resume template to your liking. You can change the colors, formatting, fonts, and more.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <CodeWindow
-            showWindowIcons
-            className="min-h-[320px] h-auto"
-            language="jsx"
-            title="custom-button.tsx"
-            value={landingContent.customizationCode}
-          />
-          <div className="flex flex-col justify-center gap-6">
-            <GradientBox
-              isCentered
-              className="h-full min-h-[320px] py-12 px-8"
-              color="pink"
-              to="top-right"
-            >
-              <CustomButton />
+        <GradientBox isCentered className="py-14 px-4 lg:px-8" color="orange" to="top-right">
+              <MusicPlayer />
+              <div className="flex absolute top-2 right-2">
+                <Tooltip className="text-xs px-2" content="Show code" placement="top">
+                  <Button
+                    isIconOnly
+                    aria-label="Show code"
+                    className="text-white/70 dark:text-black/70 data-[hover]:bg-foreground/10"
+                    radius="full"
+                    variant="light"
+                    onPress={() => setIsModalOpen(true)}
+                  >
+                    <InfoBoldIcon className="rotate-180" size={22} />
+                  </Button>
+                </Tooltip>
+                <ThemeSwitch
+                  classNames={{
+                    base: "mt-1 bg-transparent rounded-xl",
+                    wrapper: "!text-white/70 dark:!text-black/70",
+                  }}
+                />
+              </div>
             </GradientBox>
+          <div className="flex flex-col justify-center gap-6">
+        
+          <Image
+            alt="Resume"
+            as={Image}
+            className="object-cover right-[-120px] top-[-50px]"
+            height={650}
+            src="/images/hero-customization.png"
+            width={650}
+          />
+
           </div>
         </div>
         <div className="flex w-1/2 justify-start">

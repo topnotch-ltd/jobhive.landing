@@ -8,7 +8,7 @@ import {sectionWrapper, titleWrapper, title, subtitle} from "../primitives";
 
 import {FeaturesGrid} from "./features-grid";
 
-import {OpenCollectiveIcon, PatreonIcon, HeartBoldIcon, PlusLinearIcon} from "@/components/icons";
+import {OpenCollectiveIcon, PatreonIcon, HeartBoldIcon, PlusLinearIcon, StarIcon} from "@/components/icons";
 import {Sponsor, SPONSOR_TIERS, SPONSOR_COLORS, getTier} from "@/libs/docs/sponsors";
 import {SonarPulse} from "@/components/sonar-pulse";
 import {useIsMobile} from "@/hooks/use-media-query";
@@ -20,18 +20,27 @@ export interface SupportProps {
 
 const supportAccounts = [
   {
-    title: "Open Collective",
-    description: "Sponsor the NextUI maintainers.",
+    title: "Alawi",
+    description: " The best resume builder I've ever used. ",
     icon: <OpenCollectiveIcon className="text-pink-500" />,
-    href: "https://opencollective.com/nextui",
-    isExternal: true,
+    isExternal: false,
   },
   {
-    title: "Patreon",
-    description: "Sponsor the creator, Junior Garcia.",
+    title: "James",
+    description: " I love the simplicity of the UI. ",
     icon: <PatreonIcon className="text-pink-500" />,
-    href: "https://www.patreon.com/jrgarciadev?fan_landing=true",
-    isExternal: true,
+    isExternal: false,
+  },  {
+    title: "Wang",
+    description: " Wow, this is amazing! ",
+    icon: <OpenCollectiveIcon className="text-pink-500" />,
+    isExternal: false,
+  },
+  {
+    title: "Deji",
+    description: " Never taking Ls again. ",
+    icon: <PatreonIcon className="text-pink-500" />,
+    isExternal: false,
   },
 ];
 
@@ -147,9 +156,9 @@ export const Support: FC<SupportProps> = ({sponsors = []}) => {
         <div>
           <div className={titleWrapper({class: "text-center items-center"})}>
             <div className="flex md:inline-flex flex-col md:flex-row items-center">
-              <h1 className={title({size: "lg"})}>Support NextUI&nbsp;</h1>
-              <HeartBoldIcon
-                className="text-pink-500 animate-heartbeat"
+              <h1 className={title({size: "lg"})}>Testimonials&nbsp;</h1>
+              <StarIcon  
+                className="text-yellow-500 animate-heartbeat"
                 size={50}
                 style={{
                   animationDuration: "2.5s",
@@ -160,8 +169,7 @@ export const Support: FC<SupportProps> = ({sponsors = []}) => {
           <p
             className={subtitle({class: "md:w-full text-center flex justify-center items-center"})}
           >
-            Using NextUI in a profit-making product, as a freelancer, or for fun projects? Your
-            contributions will help to make NextUI better.
+            What people are saying about us.
           </p>
           <Spacer y={12} />
           <FeaturesGrid
@@ -181,13 +189,13 @@ export const Support: FC<SupportProps> = ({sponsors = []}) => {
                 <Tooltip
                   showArrow
                   color="secondary"
-                  content={"Become a sponsor"}
+                  content={"Leave a testimonial!"}
                   offset={10}
                   radius="full"
                 >
                   <Button
                     isIconOnly
-                    aria-label="Become a sponsor"
+                    aria-label="Leave a testimonial"
                     className="z-50 w-auto h-auto bg-gradient-to-b from-[#FF1CF7] to-[#7928CA]"
                     radius="full"
                     onPress={handleBecomeSponsor}

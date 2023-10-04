@@ -6,6 +6,7 @@ import {
   SunFilledIcon,
   TwitterIcon,
 } from "@/components/icons";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export const TWITTER_USER_NAME = "getnextui";
 export const SITE_URL = "https://nextui.org";
@@ -20,15 +21,22 @@ export const communityAccounts = [
   },
   {
     title: "Discord",
-    description: "To get involved in the community, ask questions and share tips.",
+    description: "To ask questions and share tips with the community.",
     icon: <DiscordIcon className="text-[#7289DA]" size={32} />,
     href: "https://discord.gg/9b6yyZKmH4",
     isExternal: true,
   },
   {
-    title: "Github",
-    description: "To report bugs, request features and contribute to the project.",
-    icon: <GithubIcon className="text-[#333] dark:text-[#E7E7E7]" size={32} />,
+    title: "Linkedin",
+    description: "For networking and collaboration within the industry.",
+    icon: <FaLinkedin className="text-[#333] dark:text-[#1d74cb]" size={32} />,
+    href: "https://github.com/nextui-org/nextui",
+    isExternal: true,
+  },
+  {
+    title: "Instagram",
+    description: "To share your beautiful resumes and design ideas.",
+    icon: <FaInstagram className="text-[#333] dark:text-[#c13a92]" size={32} />,
     href: "https://github.com/nextui-org/nextui",
     isExternal: true,
   },

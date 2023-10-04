@@ -1,4 +1,5 @@
 import {Spacer} from "@nextui-org/react";
+import {Image} from "@nextui-org/react";
 
 import {sectionWrapper, titleWrapper, title, subtitle} from "../primitives";
 
@@ -21,6 +22,18 @@ export const Pricing = () => {
             Join our pricing plan and get access to all the features.
           </p>
           <Spacer y={12} />
+          <div className="grid lg:grid-cols-2" style={{ gridTemplateColumns: "1fr 3fr" }}>
+
+          <Image
+            alt="Resume"
+            as={Image}
+            className="object-cover left-[20px] "
+            height={180}
+            src="/images/hero-pricing.png"
+            width={180}
+          />
+
+
           <PricingGrid
             classNames={{
               base: "lg:grid-cols-3",
@@ -29,6 +42,8 @@ export const Pricing = () => {
             }}
             features={pricingPlan}
           />
+
+          </div>
         </div>
       </div>
     </section>

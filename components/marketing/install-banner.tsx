@@ -17,20 +17,20 @@ const bannerSuggestions = [
   {
     title: "Getting Started",
     description:
-      "Make beautiful, modern, and fast websites/applications regardless of your design experience.",
+      "Make beautiful, modern, and fast job applications with CV Studio.",
     icon: <NoteLinearIcon className="text-pink-500" />,
     href: "/docs/guide/installation",
   },
-  {
-    title: "NextUI + Next.js",
-    description: (
-      <>
-        NextUI is fully compatible with the new Next.js 13 <Code>app/</Code> directory structure.
-      </>
-    ),
-    icon: <NextJsIcon className="text-pink-500" />,
-    href: "/docs/frameworks/nextjs",
-  },
+  // {
+  //   title: "NextUI + Next.js",
+  //   description: (
+  //     <>
+  //       NextUI is fully compatible with the new Next.js 13 <Code>app/</Code> directory structure.
+  //     </>
+  //   ),
+  //   icon: <NextJsIcon className="text-pink-500" />,
+  //   href: "/docs/frameworks/nextjs",
+  // },
 ];
 
 export const InstallBanner = () => {
@@ -47,10 +47,10 @@ export const InstallBanner = () => {
       <div className=" w-full max-w-7xl py-10 grid grid-cols-12 gap-6 md:gap-0 z-20">
         <div className="flex flex-col gap-2 col-span-12 md:col-span-6">
           <div className="flex flex-col">
-            <h1 className={title({size: "md", class: "inline"})}>Let&apos;s make the</h1>
+            <h1 className={title({size: "md", class: "inline"})}>Let&apos;s make resumes</h1>
             <div>
-              <h1 className={title({size: "md"})}>Web&nbsp;</h1>
-              <h1 className={title({size: "md", color: "violet", class: "inline"})}>Prettier</h1>
+              {/* <h1 className={title({size: "md"})}>Web&nbsp;</h1> */}
+              <h1 className={title({size: "md", color: "violet", class: "inline"})}>Smarter</h1>
             </div>
           </div>
           <p className={subtitle({class: "md:w-full text-base lg:text-lg"})}>
@@ -80,7 +80,7 @@ export const InstallBanner = () => {
             >
               Get Started
             </Button>
-            <Button
+            {/* <Button
               isExternal
               as={Link}
               className="text-sm"
@@ -98,7 +98,7 @@ export const InstallBanner = () => {
               }}
             >
               Github
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className="col-span-12 md:col-span-6">

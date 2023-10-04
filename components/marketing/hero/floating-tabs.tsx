@@ -14,7 +14,7 @@ export const FloatingTabs: React.FC<{}> = () => {
       radius="full"
       size="sm"
     >
-      <Tab key="Resumme" title="Resumme" />
+      <Tab key="Resume" title="Resume" />
       <Tab key="Cover Letter" title="Cover Letter" />
     </Tabs>
   );

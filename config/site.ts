@@ -38,4 +38,9 @@ export const siteConfig = {
     sponsor: "https://patreon.com/jrgarciadev",
     portfolio: "https://jrgarciadev.com",
   },
+  creators_socials:{
+    harithsami: "https://www.linkedin.com/in/harith-ibrahim/",
+    harithalsafi: "https://www.linkedin.com/in/harith-al-safi/"
+
+  }
 };
