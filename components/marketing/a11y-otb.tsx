@@ -39,6 +39,8 @@ import {
 } from "@/components/icons";
 import {title, subtitle, titleWrapper, sectionWrapper} from "@/components/primitives";
 import {useIsMobile} from "@/hooks/use-media-query";
+import { FaRobot } from "react-icons/fa";
+import { SiRobotframework } from "react-icons/si";
 
 const DemoCodeModal = dynamic(() => import("../demo-code-modal").then((mod) => mod.DemoCodeModal), {
   ssr: false,
@@ -46,8 +48,8 @@ const DemoCodeModal = dynamic(() => import("../demo-code-modal").then((mod) => m
 
 const a11yItems = [
   {
-    title: "Keyboard navigation",
-    icon: <KeyboardBoldIcon />,
+    title: "ATS Friendly",
+    icon: <SiRobotframework />,
   },
   {
     title: "Managed focus",
@@ -156,6 +158,8 @@ export const A11yOtb = () => {
         title="Dropdown"
         onClose={() => setIsModalOpen(false)}
       />
+    <FeaturesGrid features={landingContent.topFeatures} />
+
     </section>
   );
 };
